@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+   db:
+     build:
+       context: .
+       dockerfile: Dockerfile-db
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ALLOW_EMPTY_PASSWORD: 1
+       MYSQL_DATABASE: opencartprod
+       MYSQL_USER: opencartprod
+       MYSQL_PASSWORD: cMMS2hl8pR
+
+   opencart:
+     depends_on:
+       - db
+     build: .
+     volumes:
+       - .:/var/www
+       - ./upload:/var/www/html
+     ports:
+       - "8000:80"
+     restart: always
+volumes:
+    db_data:

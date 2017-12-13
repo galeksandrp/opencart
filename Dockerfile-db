@@ -1,0 +1,5 @@
+FROM mysql:5.7.20
+RUN apt-get update && apt-get install -y wget
+RUN wget https://11-107308137-gh.circle-artifacts.com/0/tmp/artifacts/mysqldump -O /usr/bin/mysqldump-tldr
+RUN chmod +x /usr/bin/mysqldump-tldr
+COPY docker-entrypoint-initdb.d/db.sql /docker-entrypoint-initdb.d

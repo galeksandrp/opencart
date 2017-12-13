@@ -56,3 +56,31 @@
 
 # IDE Project files
 /.idea
+
+# System Cache Files
+/storage/cache/*
+!/storage/cache/index.html
+
+# Modification Files
+/storage/modification/*
+!/storage/modification/index.html
+
+# Templates Files
+/upload/image/templates/*
+/upload/image/templates/default.jpg
+
+# Download Files
+/storage/download/*
+!/storage/download/index.html
+
+# Session Files
+/storage/session/*
+!/storage/session/index.html
+
+# Upload Files
+/storage/upload/*
+!/storage/upload/index.html
+
+# Log Files
+/storage/logs/*
+!/storage/logs/index.html
